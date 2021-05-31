@@ -59,7 +59,6 @@ body {
   from {
     outline: 5px solid #e27396;
     background-color: #ea9ab2;
-    scale: 1.5;
   }
   to {
     outline: 5px solid rgba(0, 0, 0, 0);
