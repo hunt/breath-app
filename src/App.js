@@ -9,6 +9,10 @@ const steps = {
 
 function setupFromHash() {
   const params = window.location.hash.substr(1).split(',');
+  if (params.length !== 4) {
+    console.log('use default', steps);
+    return;
+  }
   let i = 0;
   for (const step in steps) {
     steps[step] = parseFloat(params[i]);
@@ -70,9 +74,10 @@ export default function App() {
   return (
     <div className="App">
       <a href="#6,6,0,0">เข้าออก 6 วินาที</a> |{' '}
+      <a href="#6,6,6,0">เก็บลมเข้า 6</a> | <a href="#6,6,0,6">เก็บลมออก 6</a> |{' '}
       <a href="#4,4,4,4">เข้าออก 4 เก็บลมเข้าออก 4</a>
       <div id="jit" onClick={start}>
-        <div id="text"></div>
+        <div id="text">เริ่มหายใจ (คลิ๊ก)</div>
       </div>
     </div>
   );
